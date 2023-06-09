@@ -3,9 +3,6 @@ import pickle
 import bz2file as bz2
 
 
-
-
-@st.experimental_singleton
 class TrieNode:
     def __init__(self):
         self.children = {} # store 'children' of the node, key as characters
@@ -45,7 +42,7 @@ class Trie:
         t=sorted(results, key=lambda x: x[1], reverse=True)
         return t[0:5]
     
-    
+@st.experimental_singleton
 def decompress_pickle(file):
     data = bz2.BZ2File(file, 'rb')
     data = pickle.load(data)
