@@ -4,7 +4,7 @@ import bz2file as bz2
 from trie_model import Trie
 
 
-@st.experimental_singleton
+@st.cache(allow_output_mutation=True)
 def decompress_pickle(file):
     data = bz2.BZ2File(file, 'rb')
     data = pickle.load(data)
