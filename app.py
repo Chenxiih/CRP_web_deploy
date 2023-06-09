@@ -1,6 +1,6 @@
 import streamlit as st
 import pickle
-from trie_model import trie
+from trie_model import Trie
 
 
 @st.cache_resource
