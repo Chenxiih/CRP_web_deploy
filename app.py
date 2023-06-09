@@ -4,7 +4,7 @@ import bz2file as bz2
 from trie_model import Trie
 from trie_model import TrieNode
 
-@st.cache_resource(show_spinner=False)
+
 def decompress_pickle(file):
         model = bz2.BZ2File(file, 'rb')
         model = pickle.load(model)
@@ -12,6 +12,7 @@ def decompress_pickle(file):
 
 model_path = 'trie_pkl.pbz2'
 trie = decompress_pickle(model_path)
+@st.cache_resource
 
 def main():
     st.title("Welcome to VeePee")
