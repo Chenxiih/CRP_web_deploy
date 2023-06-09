@@ -14,13 +14,13 @@ def decompress_pickle(file):
 def main():
     st.title("Welcome to VeePee")
     user_input = st.text_input("Start typing here...")
-
+    model_path = 'trie_pkl.pbz2'
+    trie = decompress_pickle(model_path)
     if user_input:
         results = trie.autocomple(user_input.lower())
         for result in results:
             st.write(result)
 
-model_path = 'trie_pkl.pbz2'
-trie = decompress_pickle(model_path)
+
 if __name__ == "__main__":
     main()
