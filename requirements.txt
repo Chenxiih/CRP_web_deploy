@@ -1,1 +1,2 @@
 streamlit-searchbox==0.1.3
+bz2file
