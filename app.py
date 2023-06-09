@@ -4,7 +4,7 @@ import bz2file as bz2
 from trie_model import Trie
 from trie_model import TrieNode
 
-@st.cache_resource
+@st.cache_resource(ttl=24*60*60)
 def decompress_pickle(file):
         model = bz2.BZ2File(file, 'rb')
         model = pickle.load(model)
