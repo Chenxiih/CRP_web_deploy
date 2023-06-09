@@ -1,10 +1,4 @@
-class TrieNode:
-    def __init__(self):
-        self.children = {} # store 'children' of the node, key as characters
-        self.end_of_word = False # record whether the word ends
-        self.frequency = 0   # store frequency
-class Trie:
-    def __init__(self):
+   def __init__(self):
         self.root = TrieNode() # TrieNode object as the root
     def insert(self, word):
         node = self.root
@@ -36,3 +30,8 @@ class Trie:
             results.extend(self._dfs(child_node, prefix + char)) # extend result based on child node and updated prefix
         t=sorted(results, key=lambda x: x[1], reverse=True)
         return t[0:5]
+    class TrieNode:
+      def __init__(self):
+        self.children = {} # store 'children' of the node, key as characters
+        self.end_of_word = False # record whether the word ends
+        self.frequency = 0   # store frequency
