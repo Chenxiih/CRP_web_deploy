@@ -5,10 +5,9 @@ from trie_model import Trie
 
 @st.cache_resource
 def decompress_pickle(file):
-        data = bz2.BZ2File(file, 'rb')
-        data = pickle.load(data)
-
-        return data
+        model = bz2.BZ2File(file, 'rb')
+        model = pickle.load(model)
+        return model
 
 model_path = 'trie_pkl.pbz2'
 trie = decompress_pickle(model_path)
