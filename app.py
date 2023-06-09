@@ -2,7 +2,7 @@ import streamlit as st
 import pickle
 import bz2file as bz2
 
-st.cache_resource
+@st.cache_resource
 class TrieNode:
     def __init__(self):
         self.children = {} # store 'children' of the node, key as characters
@@ -52,10 +52,15 @@ def decompress_pickle(file):
 model_path = 'trie_pkl.pbz2'
 trie = decompress_pickle(model_path)
 
-st.title("Welcome to VeePee")
-user_input = st.text_input("Start typing here...")
+def main():
+    st.title("Welcome to VeePee")
+    user_input = st.text_input("Start typing here...")
 
-if user_input:
-            results = trie.autocomple(user_input.lower())
-            for result in results:
-                st.write(result)
+    if user_input:
+        results = trie.suggestion(user_input.lower())
+        for result in results:
+            st.write(result)
+
+
+if __name__ == "__main__":
+    main()
