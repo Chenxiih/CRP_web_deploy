@@ -5,14 +5,16 @@ import pickle
 
 
 @st.cache_resource
-def load_model(model_path):
-    with open(model_path, 'rb') as file:
-        model = pickle.load(file)
-    return model
+
+def decompress_pickle(file):
+    data = bz2.BZ2File(file, 'rb')
+    data = pickle.load(data)
+    return data
 
 
-model_path = 'trie.pkl'
-trie = load_model(model_path)
+
+model_path = 'trie_pkl.pbz2'
+trie = decompress_pickle(model_path)
 
 
 def main():
