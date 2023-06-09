@@ -2,6 +2,7 @@ import streamlit as st
 import pickle
 import bz2file as bz2
 from trie_model import Trie
+from trie_model import TrieNode
 
 @st.cache_resource
 def decompress_pickle(file):
