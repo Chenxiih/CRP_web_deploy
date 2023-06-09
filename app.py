@@ -2,7 +2,7 @@ import streamlit as st
 import pickle
 import bz2file as bz2
 
-@st.experimental_singleton
+st.cache_resource
 class TrieNode:
     def __init__(self):
         self.children = {} # store 'children' of the node, key as characters
