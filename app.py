@@ -18,7 +18,7 @@ def main():
     user_input = st.text_input("Start typing here...")
 
     if user_input:
-        results = trie.suggestion(user_input.lower())
+        results = trie.autocomple(user_input.lower())
         for result in results:
             st.write(result)
 
