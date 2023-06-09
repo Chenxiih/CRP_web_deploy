@@ -6,7 +6,6 @@ import pandas as pd
 import json
 from collections import Counter
 from collections import defaultdict
-from tqdm import tqdm 
 from random import sample
 
 from functools import partialmethod
